@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星尘 Stardust - 角色展示与约稿参考</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <style>
+    body {
+      background-color: #0f172a; /* slate-900 */
+      background-image: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+      background-attachment: fixed;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Language switching logic */
+    .lang-zh, .lang-ja, .lang-en { display: none; }
+    body[data-lang="zh"] .lang-zh { display: block; }
+    body[data-lang="ja"] .lang-ja { display: block; }
+    body[data-lang="en"] .lang-en { display: block; }
+
+    /* Inline elements */
+    body[data-lang="zh"] span.lang-zh { display: inline; }
+    body[data-lang="ja"] span.lang-ja { display: inline; }
+    body[data-lang="en"] span.lang-en { display: inline; }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.75rem;
+      background: rgba(0,0,0,0.2);
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-height: 75vh;
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(0,0,0,0.8);
+    }
+    
+    .swiper-pagination-bullet {
+      background: #fff !important;
+      opacity: 0.6;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      box-shadow: 0 0 5px #fff;
+    }
+
+    /* Paragraph spacing */
+    .text-content p {
+      margin-bottom: 1rem;
+    }
+    .text-content p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body data-lang="zh">
+  <!-- Language Switcher Top Bar -->
+  <div class="fixed top-0 left-0 right-0 z-50 glass-panel !rounded-none border-t-0 border-l-0 border-r-0 py-4 px-6 sm:px-12 flex justify-between items-center">
+    <div class="text-xl sm:text-2xl font-bold tracking-[0.2em] text-blue-200" style="text-shadow: 0 0 10px rgba(191,219,254,0.5);">STARDUST</div>
+    <div class="flex gap-4 sm:gap-6 text-sm sm:text-base">
+      <button onclick="setLang('zh')" class="hover:text-blue-300 transition lang-btn" data-target="zh">中文</button>
+      <button onclick="setLang('ja')" class="hover:text-blue-300 transition lang-btn" data-target="ja">日本語</button>
+      <button onclick="setLang('en')" class="hover:text-blue-300 transition lang-btn" data-target="en">English</button>
+    </div>
+  </div>
+
+  <!-- Header Image (曲绘) -->
+  <div class="w-full h-[60vh] sm:h-[80vh] overflow-hidden mt-[60px] relative">
+    <img src="images/曲绘.jpg" alt="Header - Stardust" class="w-full h-full object-cover opacity-80" style="object-position: center 20%;">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent"></div>
+    <div class="absolute bottom-10 left-0 right-0 text-center pointer-events-none">
+      <h1 class="text-4xl sm:text-6xl font-light tracking-widest text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] opacity-90">星尘STARDUST</h1>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-20">
+    
+    <!-- Section 2: Character Profile -->
+    <section class="glass-panel p-6 sm:p-10">
+      <!-- Image slider before intro text: 概念和印象 -->
+      <div class="mb-10">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/概念.jpg" alt="概念"></div>
+            <div class="swiper-slide"><img src="images/印象.jpg" alt="印象"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div class="text-content lang-zh text-lg leading-relaxed text-gray-200">
+        <h2 class="text-3xl font-bold mb-6 text-blue-200 border-b border-blue-900/50 pb-3">角色人设简介</h2>
+        <p class="font-bold text-xl mb-4 text-blue-100">星尘 / Stardust</p>
+        <p>星尘是第一个中文 VOCALOID4 歌姬，也是以星空、宇宙、歌声与几何图形为核心意象的少女角色。她整体气质清澈、梦幻、安静而神秘，像是从星海与以太之中诞生的歌姬，而非完全日常感的少女。</p>
+        <p>外观上，她拥有灰白色长发，发丝可带有淡蓝或钴蓝色光晕，眼睛为金色瞳。发型重点为下四马尾，发束自然垂落，整体希望保留轻盈、柔和、带有漂浮感的印象。发色不沿用官方应援色，而是以后续“发色参考”板块中的图片与色号为准。</p>
+        <p>服装设计可参考公式服元素，但不需要严格绘制公式服。可保留深蓝、紫蓝色系连衣裙、黄色或金色内衬、星形装饰、黑色长手套、黑色过膝袜或长靴等要素。服装上也可以加入三角形、星形、几何线条等装饰，使整体更有星空、宇宙与几何感。</p>
+        <p>她的代表性特征物为梅塔特隆立方体，也可以搭配金色星形元素使用。它可以出现在手中、发饰、服装纹样或背景装饰中。整体氛围希望保持清冷、纯净、梦幻，并带有一点遥远而神秘的星海感。</p>
+        <div class="mt-6 bg-blue-900/30 p-4 rounded-lg border border-blue-800/50">
+          <p class="font-bold text-blue-200 mb-2">作画重点：</p>
+          <p class="mb-0">下四马尾、金瞳、灰白长发、淡蓝或钴蓝光晕、星空感、几何元素、金色星形、梅塔特隆立方体。</p>
+        </div>
+      </div>
+
+      <div class="text-content lang-ja text-lg leading-relaxed text-gray-200">
+        <h2 class="text-3xl font-bold mb-6 text-blue-200 border-b border-blue-900/50 pb-3">キャラクター設定</h2>
+        <p class="font-bold text-xl mb-4 text-blue-100">星尘 / Stardust</p>
+        <p>星尘は、初の中国語 VOCALOID4 歌姫であり、星空、宇宙、歌声、そして幾何学模様を主なモチーフとした少女キャラクターです。全体の雰囲気は澄んでいて幻想的、静かで神秘的な印象です。日常的な少女というよりも、星の海やエーテルの中から生まれた歌姫のような、軽やかで浮遊感のある存在としてイメージしています。</p>
+        <p>外見の特徴は、灰白色の長い髪、淡い青またはコバルトブルーの光、そして金色の瞳です。髪型の重要なポイントは、低い位置で結ばれた四つのポニーテールです。髪束は自然に下へ流れ、柔らかく軽い印象を大切にしてください。髪色については公式の応援カラーには準拠せず、後続の「髪色参考」セクションに掲載している画像とカラーコードを基準にしてください。</p>
+        <p>衣装は公式衣装の要素を参考にできますが、必ずしも公式衣装をそのまま描く必要はありません。濃い青や青紫系のワンピース、黄色または金色の裏地、星形の装飾、黒いロンググローブ、黒のオーバーニーソックスやロングブーツなどを参考要素として取り入れていただければ幸いです。三角形、星形、幾何学的なライン模様などを加えることで、星空や宇宙、幾何学的な印象を強めることができます。</p>
+        <p>代表的なモチーフはメタトロン立方体です。金色の星形モチーフとあわせて、手元、髪飾り、衣装の模様、または背景の装飾として使用できます。全体としては、清らかで幻想的、静かで少し遠い星海のような雰囲気を大切にしてください。</p>
+        <div class="mt-6 bg-blue-900/30 p-4 rounded-lg border border-blue-800/50">
+          <p class="font-bold text-blue-200 mb-2">作画上の重要ポイント：</p>
+          <p class="mb-0">低い位置の四つのポニーテール、金色の瞳、灰白色の長髪、淡い青またはコバルトブルーの光、星空感、幾何学モチーフ、金色の星、メタトロン立方体。</p>
+        </div>
+      </div>
+
+      <div class="text-content lang-en text-lg leading-relaxed text-gray-200">
+        <h2 class="text-3xl font-bold mb-6 text-blue-200 border-b border-blue-900/50 pb-3">Character Profile</h2>
+        <p class="font-bold text-xl mb-4 text-blue-100">Stardust</p>
+        <p>Stardust is the first Chinese VOCALOID4 songstress, and a girl character themed around the starry sky, the universe, singing, and geometric motifs. Her overall impression is clear, dreamy, quiet, and mysterious. Rather than an ordinary everyday girl, she is imagined as a songstress born from a sea of stars and ether, with a light, floating, and slightly otherworldly atmosphere.</p>
+        <p>Her key appearance features are long grayish-white hair, a soft pale blue or cobalt-blue glow, and golden eyes. Her hairstyle is especially important: four low ponytails, with the hair sections falling naturally downward and keeping a soft, weightless feeling. Please note that her hair color should not follow the official support color. Instead, please refer to the images and color codes in the later “Hair Color Reference” section.</p>
+        <p>Her outfit may refer to the main elements of her official costume, but it does not need to be drawn exactly the same. Possible reference elements include a deep blue or bluish-purple dress, yellow or gold inner lining, star-shaped decorations, black long gloves, and black over-the-knee socks or long boots. Triangular shapes, star motifs, and geometric line decorations may also be added to strengthen the starry, cosmic, and geometric impression.</p>
+        <p>Her main symbolic motif is Metatron’s Cube, which may be paired with golden star-shaped elements. It can appear in her hands, as a hair accessory, as part of the outfit pattern, or as a background decoration. The overall atmosphere should remain pure, calm, dreamlike, and slightly distant, like a quiet sea of stars.</p>
+        <div class="mt-6 bg-blue-900/30 p-4 rounded-lg border border-blue-800/50">
+          <p class="font-bold text-blue-200 mb-2">Key points for illustration:</p>
+          <p class="mb-0">Four low ponytails, golden eyes, long grayish-white hair, pale blue or cobalt-blue glow, starry atmosphere, geometric motifs, golden stars, and Metatron’s Cube.</p>
+        </div>
+      </div>
+
+      <!-- After intro text: 轮替1234 -->
+      <div class="mt-10">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/轮替1.jpg" alt="轮替1"></div>
+            <div class="swiper-slide"><img src="images/轮替2.jpg" alt="轮替2"></div>
+            <div class="swiper-slide"><img src="images/轮替3.jpg" alt="轮替3"></div>
+            <div class="swiper-slide"><img src="images/轮替4.png" alt="轮替4"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Casual Outfit and Hair Color Reference -->
+    <section class="glass-panel p-6 sm:p-10">
+      <!-- At beginning: 私服发色参考1234 -->
+      <div class="mb-10">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/私服和发色参考.jpg" alt="私服发色参考1"></div>
+            <div class="swiper-slide"><img src="images/私服和发色参考2.png" alt="私服发色参考2"></div>
+            <div class="swiper-slide"><img src="images/私服和发色参考3.jpg" alt="私服发色参考3"></div>
+            <div class="swiper-slide"><img src="images/私服和发色参考4.jpg" alt="私服发色参考4"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- Insert text, alongside it place images 私服发色参考4 and sd参考4 -->
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+        <div class="flex-1 text-content text-lg leading-relaxed text-gray-200">
+          
+          <div class="lang-zh">
+            <h2 class="text-3xl font-bold mb-6 text-blue-200 border-b border-blue-900/50 pb-3">私服与发色参考</h2>
+            <p>私服方面，可参考图中正比双人图右侧的星尘形象。私服不作严格限定，但可参考其中的白裙设计，以及下四马尾所使用的发圈元素。整体希望保留清爽、轻盈、柔和的感觉，适合表现较为日常、温柔的私服氛围。</p>
+            <p>发型上，请保留下四马尾这一关键特征。发圈可参考图中样式，作为私服造型中的标志性小元素之一。服装整体不需要完全照搬参考图，可以在此基础上自由调整和发挥，只要保持角色本身轻盈、梦幻的气质即可。</p>
+            <p>发色方面，请以图示 SD 版的发色作为主要参考。个人认为这一版本的发色最贴合目前想要的形象。整体为偏浅银蓝、淡蓝紫灰的发色印象，带有柔和、通透的浅色调。发色不沿用官方应援色，而是以后续发色参考板块中的图片与色号为准。</p>
+          </div>
+
+          <div class="lang-ja">
+            <h2 class="text-3xl font-bold mb-6 text-blue-200 border-b border-blue-900/50 pb-3">私服と髪色の参考</h2>
+            <p>私服については、等身の二人イラスト右側にいる星尘のデザインを参考にしてください。私服のデザイン自体は厳密に固定していませんが、白いワンピースの雰囲気や、下四つのポニーテールに使われている髪飾り（ヘアゴム）は参考要素として取り入れていただけると嬉しいです。全体として、爽やかで軽やか、やわらかい印象の日常服をイメージしています。</p>
+            <p>髪型については、下四つのポニーテールという特徴を保ってください。髪飾りは参考画像のものをベースにしていただいて構いません。服装は参考画像をそのまま再現する必要はなく、あくまで参考程度で大丈夫です。星尘らしい軽やかで幻想的な雰囲気が残っていれば問題ありません。</p>
+            <p>髪色については、画像にある SD 版の髪色を主な参考にしてください。個人的には、この SD 版の色味が最もイメージに近いと感じています。全体としては、淡いシルバーブルー、または薄い青紫がかったグレー寄りの印象です。髪色は公式の応援カラーには準拠せず、後続の「髪色参考」セクションに掲載している画像とカラーコードを基準にしてください。</p>
+          </div>
+
+          <div class="lang-en">
+            <h2 class="text-3xl font-bold mb-6 text-blue-200 border-b border-blue-900/50 pb-3">Casual Outfit & Hair Color</h2>
+            <p>For her casual outfit, please refer to the Stardust design on the right side of the full-proportion two-person illustration. The casual outfit is not strictly fixed, but the white dress and the hair ties used for her four low ponytails may be used as reference elements. The overall impression should remain fresh, light, and soft, suitable for a gentle everyday outfit.</p>
+            <p>For the hairstyle, please keep the four low ponytails as an important feature. The hair ties shown in the reference image may also be used as a characteristic detail in her casual look. The outfit does not need to copy the reference image exactly; it may be adjusted freely as long as her light and dreamy atmosphere is preserved.</p>
+            <p>For the hair color, please use the SD version shown in the image as the main reference. Personally, I feel that this version matches the intended image the best. The overall impression is a pale silver-blue or light bluish-lavender gray tone, with a soft and translucent feel. Her hair color should not follow the official support color; instead, please refer to the images and color codes provided in the later “Hair Color Reference” section.</p>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-1/3 flex flex-col sm:flex-row lg:flex-col gap-4">
+          <img src="images/私服和发色参考4.jpg" alt="私服发色参考4" class="w-full sm:w-1/2 lg:w-full rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.02] transition-transform duration-300">
+          <img src="images/sd版参考4.jpg" alt="sd参考4" class="w-full sm:w-1/2 lg:w-full rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.02] transition-transform duration-300">
+        </div>
+      </div>
+
+      <!-- After text: sd版参考12345 -->
+      <div class="mt-10">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/sd版参考.jpg" alt="sd版参考1"></div>
+            <div class="swiper-slide"><img src="images/sd版参考2.jpg" alt="sd版参考2"></div>
+            <div class="swiper-slide"><img src="images/sd版参考3.jpg" alt="sd版参考3"></div>
+            <div class="swiper-slide"><img src="images/sd版参考4.jpg" alt="sd版参考4"></div>
+            <div class="swiper-slide"><img src="images/sd版参考5.jpg" alt="sd版参考5"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download link -->
+    <div class="text-center py-4">
+      <a href="images.zip" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] hover:-translate-y-1">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        <span class="lang-zh text-lg">下载参考图包 (.zip)</span>
+        <span class="lang-ja text-lg">参考画像パックをダウンロード (.zip)</span>
+        <span class="lang-en text-lg">Download Reference Image Pack (.zip)</span>
+      </a>
+    </div>
+
+    <!-- Section 1: Disclaimer -->
+    <section class="glass-panel p-6 sm:p-10 text-sm sm:text-base text-gray-400">
+      <div class="lang-zh text-content">
+        <h2 class="text-2xl font-bold mb-4 text-gray-300 border-b border-gray-700 pb-2">免责声明</h2>
+        <p>本网页仅用于角色展示、宣传及约稿参考，不用于任何商业用途。页面中部分图片、文字或相关素材仅作为人设说明与约稿参考使用。</p>
+        <p>由于本人个人喜好，页面中可能较多加入枫叶老师的作品作为画风、氛围或构图参考。相关图片版权归原作者所有，本人不主张其任何权利。</p>
+        <p>本网页及其中所有图片、参考资料、文字说明，均严禁用于 AI 创作、AI 训练、AI 学习、AI 图像生成及任何相关用途。如页面内容涉及侵权或使用不当，请联系创建者删除。</p>
+      </div>
+
+      <div class="lang-ja text-content">
+        <h2 class="text-2xl font-bold mb-4 text-gray-300 border-b border-gray-700 pb-2">免責事項</h2>
+        <p>本ページは、キャラクター紹介、宣伝およびイラスト依頼用の参考資料としてのみ使用しており、商用利用を目的としたものではありません。掲載されている一部の画像、文章、その他の素材は、キャラクター設定の説明および依頼時の参考資料としてのみ使用しています。</p>
+        <p>作成者本人の好みにより、本ページには楓葉先生の作品を、絵柄、雰囲気、構図などの参考として多く掲載している場合があります。これらの画像の著作権は各権利者・原作者に帰属し、作成者は一切の権利を主張いたしません。</p>
+        <p>本ページおよび掲載されているすべての画像、参考資料、文章説明は、AI 作品制作、AI 学習、AI トレーニング、AI 画像生成、その他 AI 関連用途への使用を固く禁止します。権利上の問題、または不適切な使用がございましたら、作成者までご連絡ください。確認後、削除いたします。</p>
+      </div>
+
+      <div class="lang-en text-content">
+        <h2 class="text-2xl font-bold mb-4 text-gray-300 border-b border-gray-700 pb-2">Disclaimer</h2>
+        <p>This webpage is intended solely for character introduction, promotion, and commission reference purposes. It is not used for any commercial purpose. Some images, text, and related materials on this page are used only as references for character description and commission requests.</p>
+        <p>Due to the creator’s personal preference, this page may include a relatively large number of artworks by Kaedeha-sensei as references for art style, atmosphere, or composition. The copyrights of these images belong to their respective artists and rights holders. The creator does not claim any rights to them.</p>
+        <p>This webpage, including all images, reference materials, and written descriptions, is strictly prohibited from being used for AI artwork creation, AI training, AI learning, AI image generation, or any other AI-related purposes. If any content on this page infringes upon your rights or is used inappropriately, please contact the creator for removal.</p>
+      </div>
+      
+      <div class="mt-8 pt-6 border-t border-gray-700 flex flex-wrap items-center gap-3 justify-center sm:justify-start">
+        <span>创建者 / 作成者 / Creator Twitter (X):</span>
+        <a href="https://x.com/MeiHe812" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2 bg-black/30 px-4 py-2 rounded-full border border-gray-700 hover:border-blue-500/50">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="w-4 h-4 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          @MeiHe812
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // Language switching logic
+    function setLang(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if(btn.dataset.target === lang) {
+          btn.classList.add('text-blue-300', 'font-bold', 'drop-shadow-[0_0_8px_rgba(147,197,253,0.8)]');
+          btn.classList.remove('text-gray-400', 'hover:text-blue-300');
+        } else {
+          btn.classList.remove('text-blue-300', 'font-bold', 'drop-shadow-[0_0_8px_rgba(147,197,253,0.8)]');
+          btn.classList.add('text-gray-400', 'hover:text-blue-300');
+        }
+      });
+      // Store preference
+      localStorage.setItem('stardust_lang', lang);
+    }
+    
+    // Initialize language
+    const savedLang = localStorage.getItem('stardust_lang') || 'zh';
+    setLang(savedLang);
+
+    // Initialize all Swiper instances
+    var swipers = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: true,
+      autoHeight: true,
+      keyboard: {
+        enabled: true,
+      },
+      grabCursor: true
+    });
+  </script>
+</body>
+</html>
